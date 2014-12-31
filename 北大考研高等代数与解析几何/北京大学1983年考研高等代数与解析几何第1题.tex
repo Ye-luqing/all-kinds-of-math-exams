@@ -1,0 +1,457 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb} \usepackage{bm}
+\usepackage{draftwatermark,euler}
+\SetWatermarkText{http://blog.sciencenet.cn/u/Yaleking}%设置水印文字
+\SetWatermarkLightness{0.8}%设置水印亮度
+\SetWatermarkScale{0.35}%设置水印大小
+\usepackage{hyperref} \usepackage{geometry} \usepackage{yhmath}
+\usepackage{pstricks-add} \usepackage{framed,mdframed}
+\usepackage{graphicx,color} \usepackage{mathrsfs,xcolor}
+\usepackage[all]{xy} \usepackage{fancybox} \usepackage{xeCJK}
+\newtheorem*{theo}{定理} \newtheorem*{exe}{题目} \newtheorem*{rem}{评论}
+\newmdtheoremenv{lemma}{引理} \newmdtheoremenv{corollary}{推论}
+\newmdtheoremenv{example}{例} \newenvironment{theorem}
+{\bigskip\begin{mdframed}\begin{theo}}
+    {\end{theo}\end{mdframed}\bigskip} \newenvironment{exercise}
+{\bigskip\begin{mdframed}\begin{exe}}
+    {\end{exe}\end{mdframed}\bigskip}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+\newcommand{\D}{\displaystyle}\newcommand{\ri}{\Rightarrow}
+\newcommand{\ds}{\displaystyle} \renewcommand{\ni}{\noindent}
+\newcommand{\ov}{\overrightarrow} \newcommand{\pa}{\partial}
+\newcommand{\Om}{\Omega} \newcommand{\om}{\omega}
+\newcommand{\sik}{\sum_{i=1}^k} \newcommand{\vov}{\Vert\omega\Vert}
+\newcommand{\Umy}{U_{\mu_i,y^i}}
+\newcommand{\lamns}{\lambda_n^{^{\scriptstyle\sigma}}}
+\newcommand{\chiomn}{\chi_{_{\Omega_n}}}
+\newcommand{\ullim}{\underline{\lim}} \newcommand{\bsy}{\boldsymbol}
+\newcommand{\mvb}{\mathversion{bold}} \newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda} \newcommand{\va}{\varepsilon}
+\newcommand{\be}{\beta} \newcommand{\al}{\alpha}
+\newcommand{\dis}{\displaystyle} \newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}} \newcommand{\cF}{{\mathcal F}}
+\newcommand{\gB}{{\mathfrak B}} \newcommand{\eps}{\epsilon}
+\renewcommand\refname{参考文献}\renewcommand\figurename{图}
+\usepackage[]{caption2} \renewcommand{\captionlabeldelim}{}
+\setlength\parindent{0pt}
+\begin{document}
+\title{\huge{\bf{北大1983年考研高等代数与解析几何第1题}}}
+\author{\small{叶卢庆\footnote{叶卢庆(1992---),男,杭州师范大学理学院数
+      学与应用数学专业本科在读,E-mail:yeluqingmathematics@gmail.com}}}
+\maketitle
+\begin{exercise}
+  证明:在直角坐标系中,顶点在原点的二次锥面
+$$
+Ax^2+By^2+Cz^2+2Dyz+2Ezx+2Fxy=0
+$$
+有三条互相垂直的直母线的充要条件是$A+B+C=0$.
+\end{exercise}
+\begin{proof}[\textbf{证明}]
+  首先,二次锥面的直母线必过锥面的顶点,在这个题目中,也就是原点.可见,题目
+  中的锥面存在三条互相垂直的直母线,当且仅当在锥面上存在三个
+  点$(x_1,y_1,z_1),(x_2,y_2,z_2),(x_3,y_3,z_3)$,满足
+  $x_1^2+y_1^2+z_1^2=x_2^2+y_2^2+z_2^2=x_3^2+y_3^2+z_3^2=1$,且
+$$
+\begin{cases}
+  x_1x_2+y_1y_2+z_1z_{2}=0,\\
+  x_1x_3+y_1y_3+z_1z_3=0,\\
+  x_2x_3+y_2y_3+z_2z_3=0.
+\end{cases}
+$$
+$\Rightarrow:$当在曲面上存在满足上述条件的$x_1,x_2,x_3$时,
+\begin{align*}
+  &(Ax_{1}^2+By_{1}^2+Cz_{1}^2+2Dy_{1}z_{1}+2Ez_{1}x_{1}+2Fx_{1}y_{1})
+  \\&+(Ax_{2}^2+By_{2}^2+Cz_{2}^2+2Dy_{2}z_{2}+2Ez_{2}x_{2}+2Fx_{2}y_2)
+  \\&+(Ax_{3}^2+By_{3}^2+Cz_{3}^2+2Dy_{3}z_{3}+2Ez_{3}x_{3}+2Fx_{3}y_3)
+  \\&=A(x_1^2+x_2^2+x_3^2)+B(y_1^2+y_2^2+y_3^2)+C(z_1^2+z_2^2+z_3^2)
+  \\&+2D(y_1z_1+y_2z_2+y_3z_3)+2E(z_1x_1+z_2x_2+z_3x_3)+2F(x_1y_1+x_2y_2+x_3y_3).
+\end{align*}
+根据文
+档
+\href{http://blog.sciencenet.cn/home.php?mod=space&uid=604208&do=blog&id=846994}{
+  利用正交矩阵证明关于互相垂直的三个空间单位向量的一个性质},可知
+$$
+\begin{cases}
+  x_1^2+x_2^2+x_3^2=y_1^2+y_2^2+y_3^2=z_1^2+z_2^2+z_3^2=1,\\
+  x_1y_1+x_2y_2+x_3y_3=y_1z_1+y_2z_2+y_3z_3=z_1x_1+z_2x_2+z_3x_3=0.
+\end{cases}
+$$
+因此可得$A+B+C=0$.\\\\
+$\Leftarrow:$当$A+B+C=0$时,
+\begin{equation}
+  \label{eq:1}
+  Ax^2+By^2+Cz^2+2Dyz+2Ezx+2Fxy=0.
+\end{equation}
+式\eqref{eq:1}可以写为
+\begin{equation}
+  \label{eq:2}
+  \begin{pmatrix}
+    x&y&z
+  \end{pmatrix}
+  \begin{pmatrix}
+    A&F&E\\
+    F&B&D\\
+    E&D&C
+  \end{pmatrix}
+  \begin{pmatrix}
+    x\\
+    y\\
+    z\\
+  \end{pmatrix}=0.
+\end{equation}
+其中对称矩阵
+$$
+P= \begin{pmatrix}
+  A&F&E\\
+  F&B&D\\
+  E&D&C
+\end{pmatrix}
+$$
+是一个迹零矩阵.将对称矩阵分解为$UGU^{-1}$,其中$G$为对角矩阵,$U$为正交矩
+阵.由于$P$和$G$相似,因此它们的迹相等.因此经过转轴后,锥面方程可以变为
+\begin{equation}\label{eq:3}
+  x^2\cos^2\theta=(z+y\sin\theta)(z-y\sin\theta).
+\end{equation}
+其中$\theta\in [0,\frac{\pi}{2}]$是个常数,且$\sin\theta,\cos\theta\neq
+0$(因为当$\sin\theta$或$\cos\theta$为零时,锥面上显然存在三条互相垂直的
+直母线).于是,锥面\eqref{eq:3}的一族直母线为
+\begin{equation}\label{eq:4}
+  \begin{cases}
+    v(z+y\sin\theta)=x\cos\theta,\\
+    z-y\sin\theta=xv\cos\theta
+  \end{cases}
+\end{equation}
+直母线\eqref{eq:4}的方向向量为
+$$
+(\cos\theta,-v\sin\theta,-v)\times
+(v\cos\theta,\sin\theta,-1)=(2v\sin\theta,\cos\theta-v^2\cos\theta,\cos\theta\sin\theta+v^2\cos\theta\sin\theta).
+$$
+我们要证明的是,无论$\theta$取什么值,总存在$(v_1,v_2,v_{3})$,其中
+$v_1,v_2,v_3$互不相等,使得下面的
+方程成立:
+$$
+(2v_{1}\sin\theta,\cos\theta-v_{1}^2\cos\theta,\cos\theta\sin\theta+v_{1}^2\cos\theta\sin\theta)\cdot
+(2v_{2}\sin\theta,\cos\theta-v_{2}^2\cos\theta,\cos\theta\sin\theta+v_{2}^2\cos\theta\sin\theta)=0,
+$$
+$$
+(2v_{1}\sin\theta,\cos\theta-v_{1}^2\cos\theta,\cos\theta\sin\theta+v_{1}^2\cos\theta\sin\theta)\cdot
+(2v_{3}\sin\theta,\cos\theta-v_{3}^2\cos\theta,\cos\theta\sin\theta+v_{3}^2\cos\theta\sin\theta)=0,
+$$
+$$
+(2v_{2}\sin\theta,\cos\theta-v_{2}^2\cos\theta,\cos\theta\sin\theta+v_{2}^2\cos\theta\sin\theta)\cdot
+(2v_{3}\sin\theta,\cos\theta-v_{3}^2\cos\theta,\cos\theta\sin\theta+v_{3}^2\cos\theta\sin\theta)=0.
+$$
+也即
+\begin{equation}\label{eq:5}
+  4v_1v_2\sin^2\theta+\cos^2\theta (1-v_1^2)(1-v_2^2)+\cos^2\theta\sin^2\theta(1+v_1^2)(1+v_2^2)=0.
+\end{equation}
+\begin{equation}
+  \label{eq:6}
+  4v_1v_3\sin^2\theta+\cos^2\theta (1-v_1^2)(1-v_3^2)+\cos^2\theta\sin^2\theta(1+v_1^2)(1+v_3^2)=0.
+\end{equation}
+\begin{equation}
+  \label{eq:7}
+  4v_3v_2\sin^2\theta+\cos^2\theta (1-v_3^2)(1-v_2^2)+\cos^2\theta\sin^2\theta(1+v_3^2)(1+v_2^2)=0.
+\end{equation}
+当$v_1$固定时,式\eqref{eq:5}是关于$v_2$的二次方程.整理一下,可得
+$$
+[-\cos^2\theta+v_1^2(\sin^2\theta+1)]v_2^2+4v_1\tan^2\theta
+v_2+1-\cos^2\theta v_1^2+\sin^2\theta=0.
+$$
+可见,根据韦达定
+理
+,$v_2+v_3=\frac{4v_1\tan^2\theta}{\cos^2\theta-v_1^2(1+\sin^2\theta)}$,$v_2v_3=\frac{-1-\sin^2\theta+v_1^2\cos^2\theta}{\cos^2\theta-v_{1}^{2}(1+\sin^{2}\theta)}$.代
+入式\eqref{eq:7}可得
+\begin{align*}
+&\left(1+\sin^2\theta\right)\left(1+\left(\frac{-1-\sin^2\theta+v_1^2\cos^2\theta}{\cos^2\theta-v_{1}^{2}(1+\sin^{2}\theta)}\right)^2\right)+4\tan^2\theta\left(\frac{-1-\sin^2\theta+v_1^2\cos^2\theta}{\cos^2\theta-v_{1}^{2}(1+\sin^{2}\theta)}\right)\\&-\cos^2\theta\left[\left(\frac{4v_1\tan^2\theta}{\cos^2\theta-v_1^2(1+\sin^2\theta)}\right)^{2}-2\frac{-1-\sin^2\theta+v_1^2\cos^2\theta}{\cos^2\theta-v_{1}^{2}(1+\sin^{2}\theta)}\right]=0.
+\end{align*}
+解得$v_1$可以等于$0$.此
+时,$v_2+v_3=0,v_2v_3=\frac{-1-\sin^2\theta}{\cos^2\theta}$.于是,可以让
+$v_2=\frac{\sqrt{1+\sin^2\theta}}{\cos\theta}$,$v_3=-\frac{\sqrt{1+\sin^2\theta}}{\cos\theta}$.这
+样我们就确定了锥面\eqref{eq:3}上确实存在三条互相垂直的直母线.
+\end{proof}
+\end{document}
+
+
+
+
+将上式因式分解为
+$$
+(m_1x+m_2y+m_3z)(n_1x+n_2y+n_3z)=0,
+$$
+得到锥面有直母线
+$$
+\begin{cases}
+  m_1x+m_2y+m_3z=0,\\
+n_1x+n_2y+n_3z=0.
+\end{cases}
+$$
+则有
+$$
+m_1n_1+m_2n_2+m_3n_3=0.
+$$
+于是,平面$m_1x+m_2y+m_3z=0$和
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+方程\eqref{eq:3}
+化为
+\begin{equation}
+  \label{eq:4}
+  \alpha (x+z)(x-z)=\beta (z+y)(z-y).
+\end{equation}
+根据对称性,不妨让$\alpha=1$.于是,
+$$
+\begin{cases}
+  x+z=\beta v(z+y),\\
+v(x-z)=z-y.
+\end{cases},
+\begin{cases}
+  x+z=\beta w(z-y),\\
+w(x-z)=z+y
+\end{cases}.
+$$
+前者是$v$族直母线,后者是$w$族直母线.$v$族直母线的方向向量为
+$$
+(1,-\beta v,1-\beta v)\times (v,1,-1-v)=(\beta
+v^2+2\beta v-1,-\beta v^2+2v+1,\beta v^2+1).
+$$
+$w$族直母线的方向向量为
+$$
+(1,\beta w,1-\beta w)\times (w,-1,-w-1)=(-\beta w^2-2\beta w+1,-\beta
+w^{2}+2w+1,-1-\beta w^{2}).
+$$
+令两条$v$族直母线垂直,也就是存在$v_1,v_2$,使得
+\begin{align*}
+&\left[(1,-\beta v_{1},1-\beta v_{1})\times
+  (v_{1},1,-1-v_{1})\right]\cdot \left[(1,-\beta v_{2},1-\beta v_{2})\times (v_{2},1,-1-v_{2})\right]\\&=
+\begin{vmatrix}
+  (1,-\beta v_1,1-\beta v_1)\cdot (1,-\beta v_2,1-\beta v_2)&(1,-\beta
+  v_1,1-\beta v_1)\cdot (v_2,1,-1-v_2)\\
+(v_1,1,-1-v_1)\cdot (1,-\beta v_{2},1-\beta v_{2})&(v_1,1,-1-v_1)\cdot (v_2,1,-1-v_2)
+\end{vmatrix}\\&=
+\begin{vmatrix}
+  -\beta(v_1+v_2)+2\beta^2v_1v_2+2&\beta v_1v_2-1\\
+\beta v_1v_2-1&2v_1v_2+v_1+v_2+2
+\end{vmatrix}=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+我们只要证明锥面\eqref{eq:3}上有三条互相垂直
+的直母线即可.不失一般性地,令$\gamma=-1$,则方程\eqref{eq:3}变为
+\begin{equation}\label{eq:4}
+z^2=\alpha x^2+(1-\alpha) y^2,
+\end{equation}
+经过原点的平面$x=py+qz$与锥面\eqref{eq:4}相交,可得
+\begin{equation}
+  \label{eq:5}
+  (z+y)(z-y)=\alpha(py+qz+y)(py+qz-y).
+\end{equation}
+于是我们得到了两条直线
+$$
+\begin{cases}
+  z+y=\alpha[(p+1)y+qz]
+\end{cases}
+$$
+
+
+
+
+
+
+
+方程\eqref{eq:3}
+化为
+\begin{equation}
+  \label{eq:4}
+  \alpha (x+z)(x-z)=\beta (z+y)(z-y).
+\end{equation}
+根据对称性,不妨让$\alpha=1$.于是,
+$$
+\begin{cases}
+  x+z=\beta v(z+y),\\
+v(x-z)=z-y.
+\end{cases},
+\begin{cases}
+  x+z=\beta w(z-y),\\
+w(x-z)=z+y
+\end{cases}.
+$$
+前者是$v$族直母线,后者是$w$族直母线.$v$族直母线的方向向量为
+$$
+(1,-\beta v,1-\beta v)\times (v,1,-1-v)=(\beta
+v^2+2\beta v-1,-\beta v^2+2v+1,\beta v^2+1).
+$$
+$w$族直母线的方向向量为
+$$
+(1,\beta w,1-\beta w)\times (w,-1,-w-1)=(-\beta w^2-2\beta w+1,-\beta
+w^{2}+2w+1,-1-\beta w^{2}).
+$$
+令两条$v$族直母线垂直,也就是存在$v_1,v_2$,使得
+\begin{align*}
+&\left[(1,-\beta v_{1},1-\beta v_{1})\times
+  (v_{1},1,-1-v_{1})\right]\cdot \left[(1,-\beta v_{2},1-\beta v_{2})\times (v_{2},1,-1-v_{2})\right]\\&=
+\begin{vmatrix}
+  (1,-\beta v_1,1-\beta v_1)\cdot (1,-\beta v_2,1-\beta v_2)&(1,-\beta
+  v_1,1-\beta v_1)\cdot (v_2,1,-1-v_2)\\
+(v_1,1,-1-v_1)\cdot (1,-\beta v_{2},1-\beta v_{2})&(v_1,1,-1-v_1)\cdot (v_2,1,-1-v_2)
+\end{vmatrix}\\&=
+\begin{vmatrix}
+  -\beta(v_1+v_2)+2\beta^2v_1v_2+2&\beta v_1v_2-1\\
+\beta v_1v_2-1&2v_1v_2+v_1+v_2+2
+\end{vmatrix}=
+
+
+
+
+
+
+锥面\eqref{eq:3}可化为
+$$
+x^2\cos^2\theta=(z+y\sin\theta)(z-y\sin\theta).
+$$
+于是,锥面\eqref{eq:3}的直母线为
+$$
+\begin{cases}
+  v(z+y\sin\theta)=x\cos\theta,\\
+z-y\sin\theta=xv\cos\theta
+\end{cases}
+$$
+$$
+(\cos\theta,-\sin\theta,-1)\times (\cos\theta,\sin\theta,-1)=
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+现在我们证明,通过转轴,能让方程\eqref{eq:3}完全失去
+平方项.让我们先消去$z^{2}$.为此,令
+$$
+\begin{cases}
+  x=x',\\
+y=y'\cos\phi-z'\sin\phi,\\
+z=y'\sin\phi+z'\cos\phi.
+\end{cases}
+$$
+代入式\eqref{eq:3},可得
+\begin{align*}
+  x'^2\cos^2\theta+(y'\cos\phi-z'\sin\phi)^2\sin^2\theta-(y'\sin\phi+z'\cos\phi)^2=0.
+\end{align*}
+让$\sin^2\phi\sin^2\theta=\cos^2\phi$,即让$z'^2$消失.此时,$x'^2$的系数
+成为$\cos^2\theta$,$y'^2$的系数成为
+v$\cos^2\phi\sin^2\theta+\sin^2\phi$.然后让
+$$
+\begin{cases}
+  z'=z'',\\
+
+\end{cases}
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{equation}\label{eq:3}
+x^{2}\cos^{2}\theta + y^{2}\sin^{2}\theta-z^{2}=0.
+\end{equation}
+其中$\theta$是常数.锥面方程\eqref{eq:3}可以化为
+$$
+
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+令$v_1=0$,则得
+\begin{equation}\label{eq:5}
+\cos^2\theta(1-v_2^2)+\cos^2\theta\sin^2\theta(1+v_2^2)=0.
+\end{equation}
+为使得式\eqref{eq:5}成立,只需要
+$$
+(1-v_2^2)+\sin^2\theta(1+v_2^2)=0,
+$$
+即
+$$
+\sin^{2}\theta+1-\cos^2\theta v_2^2=0,
+$$
+当$\cos\theta\neq 0$时,也即,
+$$
+v_2^2=\frac{1+\sin^2\theta}{\cos^2\theta}.
+$$
+可见,此时$v_2$有两个非零解.

@@ -1,0 +1,118 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{bm}
+\usepackage{draftwatermark,euler}
+\SetWatermarkText{http://blog.sciencenet.cn/u/Yaleking}%设置水印文字
+\SetWatermarkLightness{0.8}%设置水印亮度
+\SetWatermarkScale{0.35}%设置水印大小
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{yhmath}
+\usepackage{pstricks-add}
+\usepackage{framed,mdframed}
+\usepackage{graphicx,color} 
+\usepackage{mathrsfs,xcolor} 
+\usepackage[all]{xy}
+\usepackage{fancybox} 
+\usepackage{xeCJK}
+\newtheorem*{theo}{定理}
+\newtheorem*{exe}{题目}
+\newtheorem*{rem}{评论}
+\newmdtheoremenv{lemma}{引理}
+\newmdtheoremenv{corollary}{推论}
+\newmdtheoremenv{example}{例}
+\newenvironment{theorem}
+{\bigskip\begin{mdframed}\begin{theo}}
+    {\end{theo}\end{mdframed}\bigskip}
+\newenvironment{exercise}
+{\bigskip\begin{mdframed}\begin{exe}}
+    {\end{exe}\end{mdframed}\bigskip}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+\newcommand{\D}{\displaystyle}\newcommand{\ri}{\Rightarrow}
+\newcommand{\ds}{\displaystyle} \renewcommand{\ni}{\noindent}
+\newcommand{\ov}{\overrightarrow}
+\newcommand{\pa}{\partial} \newcommand{\Om}{\Omega}
+\newcommand{\om}{\omega} \newcommand{\sik}{\sum_{i=1}^k}
+\newcommand{\vov}{\Vert\omega\Vert} \newcommand{\Umy}{U_{\mu_i,y^i}}
+\newcommand{\lamns}{\lambda_n^{^{\scriptstyle\sigma}}}
+\newcommand{\chiomn}{\chi_{_{\Omega_n}}}
+\newcommand{\ullim}{\underline{\lim}} \newcommand{\bsy}{\boldsymbol}
+\newcommand{\mvb}{\mathversion{bold}} \newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda} \newcommand{\va}{\varepsilon}
+\newcommand{\be}{\beta} \newcommand{\al}{\alpha}
+\newcommand{\dis}{\displaystyle} \newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}} \newcommand{\cF}{{\mathcal F}}
+\newcommand{\gB}{{\mathfrak B}} \newcommand{\eps}{\epsilon}
+\renewcommand\refname{参考文献}\renewcommand\figurename{图}
+\usepackage[]{caption2} 
+\renewcommand{\captionlabeldelim}{}
+\setlength\parindent{0pt}
+\begin{document}
+\title{\huge{\bf{山师大2007年高等代数与解析几何第7题}}} \author{\small{叶卢庆\footnote{叶卢庆(1992---),男,杭州师范大学理学院数学与应用数学专业本科在读,E-mail:yeluqingmathematics@gmail.com}}}
+\maketitle
+\begin{exercise}
+求单叶双曲面$x^2+y^2-z^2=1$过点$(1,3,3)$的两条直母线所决定的平面方程.
+\end{exercise}
+\begin{proof}[\textbf{解}]
+$$
+x^2+y^2-z^2=1\iff (x+z)(x-z)=(1+y)(1-y).
+$$
+因此
+$$
+\begin{cases}
+  x+z=u(1+y),\\
+u(x-z)=1-y.
+\end{cases}
+$$
+或者
+$$
+\begin{cases}
+  x+z=v(1-y),\\
+v(x-z)=1+y.
+\end{cases}
+$$
+其中$u,v$都是参数.这是单叶双曲面的两族直母线.如果是$u$族直母线通过点
+$(1,3,3)$,则有
+$$
+\begin{cases}
+  4=4u,\\
+-2u=-2.
+\end{cases}
+$$
+可得$u=1$.于是通过$(1,3,3)$的$u$族直母线为
+$$
+\begin{cases}
+  x+z=1+y,\\
+x-z=1-y.
+\end{cases}\iff
+\begin{cases}
+  x=1,\\
+z=y
+\end{cases}.
+$$
+可见该直线的方向向量为$(0,1,1)$.如果是$v$族直母线通过点$(1,3,3)$,则
+$$
+\begin{cases}
+  4=v(-2),\\
+v(-2)=4.
+\end{cases}
+$$
+可得$v=-2$,于是通过$(1,3,3)$的$v$族直母线为
+$$
+\begin{cases}
+  x+z=-2(1-y),\\
+-2(x-z)=1+y
+\end{cases}\iff \frac{x}{1}=\frac{y-\frac{5}{3}}{\frac{4}{3}}=\frac{z-\frac{4}{3}}{\frac{5}{3}}.
+$$
+可见该直线的方向向量为$(3,4,5)$.于是两条直线展成的平面的法向量为
+$$
+(0,1,1)\times (3,4,5)=(1,3,-3).
+$$
+于是平面方程为
+$$
+x+3y-3z-1=0.
+$$
+\end{proof}
+\end{document}

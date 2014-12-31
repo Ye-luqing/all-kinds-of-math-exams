@@ -1,0 +1,130 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{yhmath}
+\usepackage{pstricks-add}
+\usepackage{framed,mdframed}
+\usepackage{graphicx,color} 
+\usepackage{mathrsfs,xcolor} 
+\usepackage[all]{xy}
+\usepackage{fancybox} 
+\usepackage{xeCJK}
+\newtheorem{theo}{定理}
+\newtheorem*{exe}{题目}
+\newtheorem*{rem}{评论}
+\newmdtheoremenv{lemma}{引理}
+\newmdtheoremenv{corollary}{推论}
+\newmdtheoremenv{example}{例}
+\newenvironment{theorem}
+{\bigskip\begin{mdframed}\begin{theo}}
+    {\end{theo}\end{mdframed}\bigskip}
+\newenvironment{exercise}
+{\bigskip\begin{mdframed}\begin{exe}}
+    {\end{exe}\end{mdframed}\bigskip}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+\newcommand{\D}{\displaystyle}\newcommand{\ri}{\Rightarrow}
+\newcommand{\ds}{\displaystyle} \renewcommand{\ni}{\noindent}
+\newcommand{\pa}{\partial} \newcommand{\Om}{\Omega}
+\newcommand{\ov}{\overrightarrow} \newcommand{\sik}{\sum_{i=1}^k}
+\newcommand{\vov}{\Vert\omega\Vert} \newcommand{\Umy}{U_{\mu_i,y^i}}
+\newcommand{\lamns}{\lambda_n^{^{\scriptstyle\sigma}}}
+\newcommand{\chiomn}{\chi_{_{\Omega_n}}}
+\newcommand{\ullim}{\underline{\lim}} \newcommand{\bsy}{\boldsymbol}
+\newcommand{\mvb}{\mathversion{bold}} \newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda} \newcommand{\va}{\varepsilon}
+\newcommand{\be}{\beta} \newcommand{\al}{\alpha}
+\newcommand{\dis}{\displaystyle} \newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}} \newcommand{\cF}{{\mathcal F}}
+\newcommand{\gB}{{\mathfrak B}} \newcommand{\eps}{\epsilon}
+\renewcommand\refname{参考文献}\renewcommand\figurename{图}
+\usepackage[]{caption2} 
+\renewcommand{\captionlabeldelim}{}
+\begin{document}
+\title{\huge{\bf{第六届中国大学生数学竞赛预赛第一题}}} \author{\small{叶卢
+    庆\footnote{叶卢庆(1992---),男,杭州师范大学理学院数学与应用数学专业
+      本科在读,E-mail:yeluqingmathematics@gmail.com}}}
+\maketitle
+\begin{exercise}[第六届中国大学生数学竞赛预赛第一题]
+  已知空间的两条直线
+$$
+l_1:\frac{x-4}{1}=\frac{y-3}{-2}=\frac{z-8}{1},
+$$
+$$
+l_2:\frac{x+1}{7}=\frac{y+1}{-6}=\frac{z+1}{1}.
+$$
+\begin{itemize}
+\item 证明$l_1,l_2$异面.
+\item 求$l_1,l_2$公垂线的标准方程.
+\item 求连接$l_1$上的任一点和$l_2$上的任一点线段中点的轨迹的一般方程.
+\end{itemize}
+\end{exercise}
+\begin{proof}[\textbf{证明}]
+  \begin{itemize}
+  \item 直线$l_1$经过点$p(4,3,8)$,直线$l_2$经过点$q(-1,-1,-1)$.直线
+    $l_1$的方向向量为$\ov{n}_1=(1,-2,1)$,直线$l_2$的方向向量为
+    $\ov{n}_2=(7,-6,1)$.由于
+$$
+(\ov{pq}\times \ov{n}_1)\cdot \ov{n}_2=
+\begin{vmatrix}
+  7&-6&1\\
+-5&-4&-9\\
+1&-2&1
+\end{vmatrix}=-116\neq 0,
+$$
+因此直线$l_1,l_2$异面.
+\item 我们先求出公垂线的方向向量.易得公垂线的方向向量为
+$$
+\ov{n}_{3}=\ov{n}_1\times \ov{n}_2=(4,6,8).
+$$
+于是公垂线和直线$l_1$展成的平面的法向量为
+$$
+\ov{n}_1\times \ov{n}_3=(-22,-4,14).
+$$
+于是公垂线和直线$l_1$展成的平面的方程可以设为
+\begin{equation}\label{eq:1}
+-22x-4y+14z+d=0.
+\end{equation}
+由于平面\eqref{eq:1}经过点$(4,3,8)$,因此平面\eqref{eq:1}为
+$$
+-11x-2y+7z-6=0.
+$$
+公垂线和直线$l_2$展成的平面的法向量为
+$$
+\ov{n}_2\times\ov{n}_3=(-54,-52,66).
+$$
+因此公垂线和直线$l_2$展成的平面可以设为
+\begin{equation}
+  \label{eq:2}
+  -54x-52y+66z+f=0.
+\end{equation}
+由于平面\eqref{eq:2}经过点$(-1,-1,-1)$,因此平面\eqref{eq:2}为
+$$
+-27x-26y+33z-20=0.
+$$
+于是$l_1,l_2$的公垂线的方程为
+$$
+\begin{cases}
+  27x+26y-33z+20=0,\\
+11x+2y-7z+6=0.
+\end{cases}
+$$
+可见,公垂线的标准方程为
+$$
+\frac{x}{1}=\frac{2y-1}{3}=\frac{z-1}{2}.
+$$
+\item $l_1$上的任意一点可以设为$(t+4,-2t+3,t+8)$,$l_2$上的任意一点可以
+  设为$(7t'-1,-6t'-1,t'-1)$.于是这两个点的中点可以表示为
+$$
+(\frac{t+7t'+3}{2},\frac{-2t-6t'+2}{2},\frac{t+t'+7}{2}).
+$$
+于是,中点轨迹的一般方程为
+$$
+2x+3y+4z-20=0.
+$$
+  \end{itemize}
+\end{proof}
+\end{document}

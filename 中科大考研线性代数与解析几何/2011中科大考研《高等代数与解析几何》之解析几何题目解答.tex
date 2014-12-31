@@ -1,0 +1,111 @@
+﻿\documentclass[a4paper]{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb} \usepackage{bm}
+\usepackage{draftwatermark,euler}
+\SetWatermarkText{http://blog.sciencenet.cn/u/Yaleking}%设置水印文字
+\SetWatermarkLightness{0.8}%设置水印亮度
+\SetWatermarkScale{0.35}%设置水印大小
+\usepackage{hyperref} \usepackage{geometry} \usepackage{yhmath}
+\usepackage{pstricks-add} \usepackage{framed,mdframed}
+\usepackage{graphicx,color} \usepackage{mathrsfs,xcolor}
+\usepackage[all]{xy} \usepackage{fancybox} \usepackage{xeCJK}
+\newtheorem*{theo}{定理} 
+\newtheorem*{exe}{题目}
+\newenvironment{theorem}
+{\bigskip\begin{mdframed}\begin{theo}}
+    {\end{theo}\end{mdframed}\bigskip} 
+\newenvironment{exercise}
+{\bigskip\begin{mdframed}\begin{exe}}
+    {\end{exe}\end{mdframed}\bigskip}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\numberwithin{equation}{section}
+\setlength\parindent{0pt}
+\newcommand{\D}{\displaystyle}\newcommand{\ri}{\Rightarrow}
+\newcommand{\ds}{\displaystyle} \renewcommand{\ni}{\noindent}
+\newcommand{\pa}{\partial} \newcommand{\Om}{\Omega}
+\newcommand{\om}{\omega} \newcommand{\sik}{\sum_{i=1}^k}
+\newcommand{\vov}{\Vert\omega\Vert} \newcommand{\Umy}{U_{\mu_i,y^i}}
+\newcommand{\lamns}{\lambda_n^{^{\scriptstyle\sigma}}}
+\newcommand{\chiomn}{\chi_{_{\Omega_n}}}
+\newcommand{\ullim}{\underline{\lim}}
+\newcommand{\mvb}{\mathversion{bold}} \newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda} \newcommand{\va}{\varepsilon}
+\newcommand{\be}{\beta} \newcommand{\ov}{\overrightarrow}
+\newcommand{\dis}{\displaystyle} \newcommand{\R}{{\mathbb R}}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+\newcommand{\N}{{\mathbb N}} \newcommand{\cF}{{\mathcal F}}
+\newcommand{\gB}{{\mathfrak B}} \newcommand{\eps}{\epsilon}
+\renewcommand\refname{参考文献}\renewcommand\figurename{图}
+\usepackage[]{caption2} \renewcommand{\captionlabeldelim}{}
+\begin{document}
+\title{{\bf{2011中科大考研《线性代数与解析几何》之解析几何解
+      答\footnote{本
+        解答作为交给解析几何赵老师的第三份作业.}}}} \author{\small{叶卢庆
+    \footnote{叶卢庆(1992-),男,杭州师范大学理学院数学与应用数学专业大
+      四.学号:1002011005.E-mail:yeluqingmathematics@gmail.com}}}
+\maketitle
+\begin{exercise}[1]
+两平面$z=x+2y$和$z=-2x-y$的夹角等于？  
+\end{exercise}
+\begin{proof}[\textbf{解}]
+平面$x+2y-z=0$的法向量为$\ov{n_1}=(1,2,-1)$.平面$-2x-y-z=0$的法向量为
+$\ov{n_2}=(-2,-1,-1)$.
+$$
+\cos\langle n_1,n_2\rangle=\frac{\ov{n_1}\cdot \ov{n_2}}{|\ov{n_1}||\ov{n_2}|}=-\frac{1}{2}.
+$$
+所以两平面的夹角为$\frac{\pi}{3}$.  
+\end{proof}
+\begin{exercise}[2]
+点$(0,2,1)$到平面$2x-3y+6z=1$的距离等于？  
+\end{exercise}
+\begin{proof}[\textbf{解}]
+即在限制条件$2x-3y+6z=1$下求
+$$
+\sqrt{x^2+(y-2)^2+(z-1)^2}
+$$
+的最小值.根据Cauchy不等式,
+$$
+[x^2+(y-2)^2+(z-1)^2][2^2+(-3)^2+6^2]\geq (2x-3y+6+6z-6)^2=1.
+$$
+且等号能取到.可见,
+$$
+\sqrt{x^2+(y-2)^2+(z-1)^2}\geq \frac{1}{7}.
+$$
+于是距离就是$\frac{1}{7}$.
+\end{proof}
+\begin{exercise}[3]
+  二次曲面$xy+z^2=1$的曲面类型是？
+\end{exercise}
+\begin{proof}[\textbf{解}]
+  为了消去$xy$项,我们进行转轴.令
+$$
+\begin{cases}
+  x=x'\cos\alpha-y'\sin\alpha\\
+y=x'\sin\alpha+y'\cos\alpha\\
+z=z'
+\end{cases},
+$$
+令$\alpha=\frac{\pi}{4}$,则二次曲面可以化为
+$$
+\frac{x'^2}{2}-\frac{y'^2}{2}+z'^2=1,
+$$
+于是二次曲面的类型是单叶双曲面.
+\end{proof}
+\begin{exercise}[11]
+  设点$A(1,1,-1)$,$B(-1,1,1),C(1,1,1)$,求$\triangle ABC$的外接圆的方程.
+\end{exercise}
+\begin{proof}[\textbf{解}]
+我们先求出经过这三个点的平面方程.易得
+$\ov{AB}=(-2,0,2),\ov{AC}=(0,0,2)$.由于
+$$
+\ov{AB}\times \ov{AC}=(0,4,0),
+$$
+因此平面的方程为$y=1$.于是易得外接圆的方程为
+$$
+\begin{cases}
+  x^2+z^2=2,\\
+y=1
+\end{cases}.
+$$
+\end{proof}
+\end{document}

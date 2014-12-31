@@ -1,0 +1,112 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{bm}
+\usepackage{draftwatermark,euler}
+\SetWatermarkText{http://blog.sciencenet.cn/u/Yaleking}%设置水印文字
+\SetWatermarkLightness{0.8}%设置水印亮度
+\SetWatermarkScale{0.35}%设置水印大小
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{yhmath}
+\usepackage{pstricks-add}
+\usepackage{framed,mdframed}
+\usepackage{graphicx,color} 
+\usepackage{mathrsfs,xcolor} 
+\usepackage[all]{xy}
+\usepackage{fancybox} 
+\usepackage{xeCJK}
+\newtheorem*{theo}{定理}
+\newtheorem*{exe}{题目}
+\newtheorem*{rem}{评论}
+\newmdtheoremenv{lemma}{引理}
+\newmdtheoremenv{corollary}{推论}
+\newmdtheoremenv{example}{例}
+\newenvironment{theorem}
+{\bigskip\begin{mdframed}\begin{theo}}
+    {\end{theo}\end{mdframed}\bigskip}
+\newenvironment{exercise}
+{\bigskip\begin{mdframed}\begin{exe}}
+    {\end{exe}\end{mdframed}\bigskip}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+\newcommand{\D}{\displaystyle}\newcommand{\ri}{\Rightarrow}
+\newcommand{\ds}{\displaystyle} \renewcommand{\ni}{\noindent}
+\newcommand{\ov}{\overrightarrow}
+\newcommand{\pa}{\partial} \newcommand{\Om}{\Omega}
+\newcommand{\om}{\omega} \newcommand{\sik}{\sum_{i=1}^k}
+\newcommand{\vov}{\Vert\omega\Vert} \newcommand{\Umy}{U_{\mu_i,y^i}}
+\newcommand{\lamns}{\lambda_n^{^{\scriptstyle\sigma}}}
+\newcommand{\chiomn}{\chi_{_{\Omega_n}}}
+\newcommand{\ullim}{\underline{\lim}} \newcommand{\bsy}{\boldsymbol}
+\newcommand{\mvb}{\mathversion{bold}} \newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda} \newcommand{\va}{\varepsilon}
+\newcommand{\be}{\beta} \newcommand{\al}{\alpha}
+\newcommand{\dis}{\displaystyle} \newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}} \newcommand{\cF}{{\mathcal F}}
+\newcommand{\gB}{{\mathfrak B}} \newcommand{\eps}{\epsilon}
+\renewcommand\refname{参考文献}\renewcommand\figurename{图}
+\usepackage[]{caption2} 
+\renewcommand{\captionlabeldelim}{}
+\setlength\parindent{0pt}
+\begin{document}
+\title{\huge{\bf{杭州师范大学一道解析几何期末试题}}} \author{\small{叶卢庆\footnote{叶卢庆(1992---),男,杭州师范大学理学院数学与应用数学专业本科在读,E-mail:yeluqingmathematics@gmail.com}}}
+\maketitle
+\begin{exercise}
+  已知$\triangle ABC$,点$O$是$\triangle ABC$的外心,用
+  $\ov{AB},\ov{BC},\ov{CA}$表示向量$\ov{AO}$.
+\end{exercise}
+\begin{proof}[\textbf{解}]
+设
+$$
+\ov{AO}=\lambda_1 \ov{AB}+\lambda_2\ov{AC},
+$$
+则
+$$
+\ov{BO}=\ov{BA}+\ov{AO}=-\ov{AB}+\ov{AO}=(\lambda_1-1)\ov{AB}+\lambda_2\ov{AC}.
+$$
+$$
+\ov{CO}=\ov{CA}+\ov{AO}=\lambda_1\ov{AB}+(\lambda_2-1)\ov{AC}.
+$$
+由于是外心,因此
+$$
+\ov{AO}\cdot \ov{AO}=\ov{BO}\cdot \ov{BO},
+$$
+即
+\begin{equation}
+  \label{eq:1}
+  (\lambda_1 \ov{AB}+\lambda_2\ov{AC})\cdot (\lambda_1
+  \ov{AB}+\lambda_2\ov{AC})=((\lambda_1-1)\ov{AB}+\lambda_2\ov{AC})\cdot ((\lambda_1-1)\ov{AB}+\lambda_2\ov{AC}).
+\end{equation}
+也即
+\begin{equation}
+  \label{eq:2}
+  \lambda_1\ov{AB}^2+\lambda_2\ov{AB}\cdot
+  \ov{AC}=\frac{1}{2}\ov{AB}^2.
+\end{equation}
+同理,可得
+\begin{equation}
+  \label{eq:3}
+  \lambda_1\ov{AB}\cdot \ov{AC}+\lambda_2\ov{AC}^2=\frac{1}{2}\ov{AC}^2.
+\end{equation}
+解得
+$$
+\lambda_2=\frac{\ov{AC}^2\ov{AB}^2-\ov{AB}^2(\ov{AB}\cdot
+  \ov{AC})}{2[\ov{AB}^2\ov{AC}^2-(\ov{AB}\cdot
+  \ov{AC})^2]}=\frac{\ov{AB}^2(\ov{AC}\cdot \ov{BC})}{2[\ov{AB}^2\ov{AC}^2-(\ov{AB}\cdot
+  \ov{AC})^2]},
+$$
+$$
+\lambda_1=\frac{\ov{AC}^2\ov{AB}^2-\ov{AC}^2(\ov{AB}\cdot
+  \ov{AC})}{2[\ov{AB}^2\ov{AC}^2-(\ov{AB}\cdot \ov{AC})^2]}=\frac{-\ov{AC}^2(\ov{AB}\cdot\ov{BC})}{2[\ov{AB}^2\ov{AC}^2-(\ov{AB}\cdot
+  \ov{AC})^2]}.
+$$
+可见,
+$$
+\ov{AO}=\frac{-\ov{CA}^2(\ov{AB}\cdot\ov{BC})}{2[\ov{AB}^2\ov{CA}^2-(\ov{AB}\cdot
+  \ov{CA})^2]}\ov{AB}-\frac{\ov{AB}^2(\ov{CA}\cdot \ov{BC})}{2[\ov{AB}^2\ov{CA}^2-(\ov{AB}\cdot
+  \ov{CA})^2]}\ov{CA}
+$$
+
+\end{proof}
+\end{document}

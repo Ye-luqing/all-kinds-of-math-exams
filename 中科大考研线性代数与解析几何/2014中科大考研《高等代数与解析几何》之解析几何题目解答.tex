@@ -1,0 +1,92 @@
+﻿\documentclass[a4paper]{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb} \usepackage{bm}
+\usepackage{draftwatermark,euler}
+\SetWatermarkText{http://blog.sciencenet.cn/u/Yaleking}%设置水印文字
+\SetWatermarkLightness{0.8}%设置水印亮度
+\SetWatermarkScale{0.35}%设置水印大小
+\usepackage{hyperref} \usepackage{geometry} \usepackage{yhmath}
+\usepackage{pstricks-add} \usepackage{framed,mdframed}
+\usepackage{graphicx,color} \usepackage{mathrsfs,xcolor}
+\usepackage[all]{xy} \usepackage{fancybox} \usepackage{xeCJK}
+\newtheorem*{theo}{定理} 
+\newtheorem*{exe}{题目}
+\newenvironment{theorem}
+{\bigskip\begin{mdframed}\begin{theo}}
+    {\end{theo}\end{mdframed}\bigskip} 
+\newenvironment{exercise}
+{\bigskip\begin{mdframed}\begin{exe}}
+    {\end{exe}\end{mdframed}\bigskip}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\numberwithin{equation}{section}
+\setlength\parindent{0pt}
+\newcommand{\D}{\displaystyle}\newcommand{\ri}{\Rightarrow}
+\newcommand{\ds}{\displaystyle} \renewcommand{\ni}{\noindent}
+\newcommand{\pa}{\partial} \newcommand{\Om}{\Omega}
+\newcommand{\om}{\omega} \newcommand{\sik}{\sum_{i=1}^k}
+\newcommand{\vov}{\Vert\omega\Vert} \newcommand{\Umy}{U_{\mu_i,y^i}}
+\newcommand{\lamns}{\lambda_n^{^{\scriptstyle\sigma}}}
+\newcommand{\chiomn}{\chi_{_{\Omega_n}}}
+\newcommand{\ullim}{\underline{\lim}}
+\newcommand{\mvb}{\mathversion{bold}} \newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda} \newcommand{\va}{\varepsilon}
+\newcommand{\be}{\beta}
+\newcommand{\dis}{\displaystyle} \newcommand{\R}{{\mathbb R}}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+\newcommand{\N}{{\mathbb N}} \newcommand{\cF}{{\mathcal F}}
+\newcommand{\gB}{{\mathfrak B}} \newcommand{\eps}{\epsilon}
+\renewcommand\refname{参考文献}\renewcommand\figurename{图}
+\usepackage[]{caption2} \renewcommand{\captionlabeldelim}{}
+\begin{document}
+\title{{\bf{2014中科大考研《线性代数与解析几何》之解析几何解
+      答\footnote{本解答作为交给解析几何赵老师的第三份作业.}}}} \author{\small{叶卢庆
+    \footnote{叶卢庆(1992-),男,杭州师范大学理学院数学与应用数学专业大
+      四.学号:1002011005.E-mail:yeluqingmathematics@gmail.com}}}
+\maketitle
+\begin{exercise}[1]
+原点到直线$x+1=y+2=z+3$的距离为？  
+\end{exercise}
+\begin{proof}[\textbf{解}]
+已知直线上的任意一点$(t,t-1,t-2)$,求
+$$
+\sqrt{t^2+(t-1)^2+(t-2)^2}
+$$
+的最小值.$t^2+(t-1)^2+(t-2)^2=3t^2-6t+5$.易得当$t=1$时,$3t^2-6t+5$取得
+最小值$2$.因此原点到直线的距离为$\sqrt{2}$.
+\end{proof}
+\begin{exercise}[2]
+设点$P(1,2,3)$与原点关于平面$\pi$对称,则$\pi$的方程为？  
+\end{exercise}
+\begin{proof}[\textbf{解}]
+显然，平面$\pi$的一个法向量为$(1,2,3)$,且平面$\pi$通过点
+$(\frac{1}{2},1,\frac{3}{2})$,因此平面$\pi$的方程为
+$$
+x+2y+3z-7=0.
+$$
+\end{proof}
+\begin{exercise}[3]
+椭圆$x^2+xy+y^2=1$的离心率为？  
+\end{exercise}
+\begin{proof}[\textbf{解}]
+转轴.令
+$$
+\begin{pmatrix}
+  x\\
+y
+\end{pmatrix}=
+\begin{pmatrix}
+  \frac{1}{\sqrt{2}}&\frac{1}{\sqrt{2}}\\
+-\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{2}}
+\end{pmatrix}
+\begin{pmatrix}
+  x'\\
+y'
+\end{pmatrix}.
+$$
+代入椭圆方程,可得
+$$
+\frac{x'^2}{(\sqrt{2})^{2}}+\frac{y'^2}{(\sqrt{\frac{2}{3}})^2}=1.
+$$
+因此椭圆的离心率为$\frac{\sqrt{6}}{3}$.
+\end{proof}
+\end{document}

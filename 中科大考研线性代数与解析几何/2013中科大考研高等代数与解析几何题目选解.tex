@@ -1,0 +1,125 @@
+﻿\documentclass[a3paper]{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb} \usepackage{bm}
+\usepackage{draftwatermark,euler}
+\SetWatermarkText{http://blog.sciencenet.cn/u/Yaleking}%设置水印文字
+\SetWatermarkLightness{0.8}%设置水印亮度
+\SetWatermarkScale{0.35}%设置水印大小
+\usepackage{hyperref} \usepackage{geometry} \usepackage{yhmath}
+\usepackage{pstricks-add} \usepackage{framed,mdframed}
+\usepackage{graphicx,color} \usepackage{mathrsfs,xcolor}
+\usepackage[all]{xy} \usepackage{fancybox} \usepackage{xeCJK}
+\newtheorem*{theo}{定理} 
+\newtheorem*{exe}{题目}
+\newenvironment{theorem}
+{\bigskip\begin{mdframed}\begin{theo}}
+    {\end{theo}\end{mdframed}\bigskip} 
+\newenvironment{exercise}
+{\bigskip\begin{mdframed}\begin{exe}}
+    {\end{exe}\end{mdframed}\bigskip}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\numberwithin{equation}{section}
+\setlength\parindent{0pt}
+\newcommand{\D}{\displaystyle}\newcommand{\ri}{\Rightarrow}
+\newcommand{\ds}{\displaystyle} \renewcommand{\ni}{\noindent}
+\newcommand{\pa}{\partial} \newcommand{\Om}{\Omega}
+\newcommand{\om}{\omega} \newcommand{\sik}{\sum_{i=1}^k}
+\newcommand{\vov}{\Vert\omega\Vert} \newcommand{\Umy}{U_{\mu_i,y^i}}
+\newcommand{\lamns}{\lambda_n^{^{\scriptstyle\sigma}}}
+\newcommand{\chiomn}{\chi_{_{\Omega_n}}}
+\newcommand{\ullim}{\underline{\lim}} \newcommand{\ov}{\overrightarrow}
+\newcommand{\mvb}{\mathversion{bold}} \newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda} \newcommand{\va}{\varepsilon}
+\newcommand{\be}{\beta} \newcommand{\al}{\alpha}
+\newcommand{\dis}{\displaystyle} \newcommand{\R}{{\mathbb R}}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+\newcommand{\N}{{\mathbb N}} \newcommand{\cF}{{\mathcal F}}
+\newcommand{\gB}{{\mathfrak B}} \newcommand{\eps}{\epsilon}
+\renewcommand\refname{参考文献}\renewcommand\figurename{图}
+\usepackage[]{caption2} \renewcommand{\captionlabeldelim}{}
+\begin{document}
+\title{\huge{\bf{2013中科大考研《线性代数与解析几何》之解析几何题目解
+      答\footnote{本
+        解答作为交给解析几何赵老师的第三份作业.}}}} \author{\small{叶卢庆
+    \footnote{叶卢庆(1992-),男,杭州师范大学理学院数学与应用数学专业大
+      四.学号:1002011005.E-mail:yeluqingmathematics@gmail.com}}}
+\maketitle
+\begin{exercise}[1]
+求两直线$1-x=2y=3z$与$x=y+2=2z+4$的夹角和距离.
+\end{exercise}
+\begin{proof}[\textbf{解}]
+第一条直线的方程可以化为
+$$
+\frac{x-1}{1}=\frac{y-0}{-\frac{1}{2}}=\frac{z-0}{-\frac{1}{3}}.
+$$
+可见,第一条直线通过点$p=(1,0,0)$,且直线的方向向量为
+$\ov{n_{1}}=(1,\frac{-1}{2},\frac{-1}{3})=e_{1}-\frac{1}{2}e_{2}-\frac{1}{3}e_{3}$.第二条直线的方程可以化为
+$$
+\frac{x-0}{1}=\frac{y+2}{1}=\frac{z+2}{\frac{1}{2}}.
+$$
+可见,第二条直线通过点$q=(0,-2,-2)$,且直线的方向向量为
+$\ov{n_2}=(1,1,\frac{1}{2})=e_1+e_2+\frac{1}{2}e_{3}$.设两直线的夹角为$\alpha$,则
+$$
+\cos\alpha=\frac{|\ov{n_1}\cdot \ov{n_2}|}{|\ov{n_1}||\ov{n_2}|}=\frac{4}{21}.
+$$
+因此$\alpha=\arccos \frac{4}{21}$.下面我们来求两条直线之间的距离.首先,
+我们来求和向量$\ov{n_1},\ov{n_2}$都垂直的向量,这很简单,$\ov{n_1}\times
+\ov{n_2}$就满足条件,易得
+$$
+\ov{n_1}\times \ov{n_2}=(e_1-\frac{1}{2}e_2-\frac{1}{3}e_3)\times (e_1+e_2+\frac{1}{2}e_3)=\frac{1}{12}e_1-\frac{5}{6}e_2+\frac{3}{2}e_3=(\frac{1}{12},\frac{-5}{6},\frac{3}{2}).
+$$
+两直线之间的距离就等于
+$$
+\frac{|(\ov{n_1}\times\ov{n_2})\cdot \ov{pq}|}{|\ov{n_1}\times
+  \ov{n_2}|}=\frac{17 \sqrt{26}}{104}.
+$$
+\end{proof}
+\begin{exercise}[2]
+当实数$a,b,c$满足什么条件时,曲面$z=ax^2+bxy+cy^2$是椭圆抛物面.  
+\end{exercise}
+\begin{proof}[\textbf{解}]
+只需要二次型$ax^2+bxy+cy^2$正定即可.所以$a,b,c$满足$b^2-4ac<0$ 且 $a>0$.
+\end{proof}
+\begin{exercise}[7]
+求$x$轴绕直线$x=y=z-1$旋转所得旋转曲面的一般方程.  
+\end{exercise}
+\begin{proof}[\textbf{解}]
+设$(x_1,0,0)$是$x$轴上的任意一个点.然后在零时刻,$x$轴开始绕直线
+$x=y=z-1$运动.经过时间$t$后,$(x_1,0,0)$运动到了点
+$(x_1(t),y_{1}(t),z_1(t))$.显然,
+$$
+(x_{1}-x_1(t),0-y_1(t),0-z_1(t))\cdot (1,1,1)=0,
+$$
+其中$(1,1,1)$是直线$x=y=z-1$的方向向量.也即,
+\begin{equation}
+  \label{eq:1}
+  x_{1}=x_1(t)+y_1(t)+z_1(t).
+\end{equation}
+而且,$(x_1,0,0)$和$(x_1(t),y_1(t),z_1(t))$到直线$x=y=z-1$的距离相
+等.下面我们来求点$q=(a,b,c)$到直线$x=y=z-1$的距离.点$p=(t,t,t+1)$位于直线
+$x=y=z-1$上,设直线$pq$垂直于$x=y=z-1$,则有
+$$
+(a-t,b-t,c-t-1)\cdot (1,1,1)=0,
+$$
+也即,
+$$
+t=\frac{a+b+c-1}{3}.
+$$
+可见,
+$$
+  |\ov{pq}|^2=(\frac{b+c-2a-1}{3})^2+(\frac{a+c-2b-1}{3})^2+(\frac{a+b-2c+2}{3})^2.
+$$
+于是,我们有
+$$
+\frac{2x_1^2+2x_1+2}{3}=(\frac{y_1(t)+z_1(t)-2x_1(t)-1}{3})^2+(\frac{x_1(t)+z_1(t)-2y_1(t)-1}{3})^2+(\frac{x_1(t)+y_1(t)-2z_1(t)+2}{3})^2.
+$$
+将方程\eqref{eq:1}代入,化简可得
+$$
+x_{1}(t)y_{1}(t)+y_{1}(t)z_{1}(t)+z_{1}(t)x_{1}(t)+z_{1}(t)=0.
+$$
+于是,可得旋转曲面的方程为
+$$
+xy+yz+zx+z=0.
+$$
+\end{proof}
+\end{document}

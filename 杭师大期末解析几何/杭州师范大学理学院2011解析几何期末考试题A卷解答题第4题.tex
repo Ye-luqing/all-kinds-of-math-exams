@@ -1,0 +1,78 @@
+﻿\documentclass[a4paper]{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb} \usepackage{bm}
+\usepackage{draftwatermark,euler}
+\SetWatermarkText{http://blog.sciencenet.cn/u/Yaleking}%设置水印文字
+\SetWatermarkLightness{0.8}%设置水印亮度
+\SetWatermarkScale{0.35}%设置水印大小
+\usepackage{hyperref} \usepackage{geometry} \usepackage{yhmath}
+\usepackage{pstricks-add} \usepackage{framed,mdframed}
+\usepackage{graphicx,color} \usepackage{mathrsfs,xcolor}
+\usepackage[all]{xy} \usepackage{fancybox} \usepackage{xeCJK}
+\newtheorem*{theo}{定理} 
+\newtheorem*{exe}{题目}
+\newenvironment{theorem}
+{\bigskip\begin{mdframed}\begin{theo}}
+    {\end{theo}\end{mdframed}\bigskip} 
+\newenvironment{exercise}
+{\bigskip\begin{mdframed}\begin{exe}}
+    {\end{exe}\end{mdframed}\bigskip}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\numberwithin{equation}{section}
+\setlength\parindent{0pt}
+\newcommand{\D}{\displaystyle}\newcommand{\ri}{\Rightarrow}
+\newcommand{\ds}{\displaystyle} \renewcommand{\ni}{\noindent}
+\newcommand{\pa}{\partial} \newcommand{\Om}{\Omega}
+\newcommand{\om}{\omega} \newcommand{\sik}{\sum_{i=1}^k}
+\newcommand{\vov}{\Vert\omega\Vert} \newcommand{\Umy}{U_{\mu_i,y^i}}
+\newcommand{\lamns}{\lambda_n^{^{\scriptstyle\sigma}}}
+\newcommand{\chiomn}{\chi_{_{\Omega_n}}}
+\newcommand{\ullim}{\underline{\lim}}
+\newcommand{\mvb}{\mathversion{bold}} \newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda} \newcommand{\va}{\varepsilon}
+\newcommand{\be}{\beta}
+\newcommand{\dis}{\displaystyle} \newcommand{\R}{{\mathbb R}}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+\newcommand{\N}{{\mathbb N}} \newcommand{\cF}{{\mathcal F}}
+\newcommand{\gB}{{\mathfrak B}} \newcommand{\eps}{\epsilon}
+\renewcommand\refname{参考文献}\renewcommand\figurename{图}
+\usepackage[]{caption2} \renewcommand{\captionlabeldelim}{}
+\begin{document}
+\title{{\bf{杭州师范大学理学院2011《解析几何》期末试卷(A卷)解答题4\footnote{本解答作为交给解
+        析几何赵老师的第四份作业.}}}} \author{\small{叶卢庆
+    \footnote{叶卢庆(1992-),男,杭州师范大学理学院数学与应用数学专业大
+      四.学号:1002011005.E-mail:yeluqingmathematics@gmail.com}}}
+\maketitle
+\begin{exercise}
+设柱面的准线为$
+\begin{cases}
+  x=y^2+z^2\\
+x-2z=0
+\end{cases}
+$.母线垂直于准线所在的平面,求柱面的方程.
+\end{exercise}
+\begin{proof}[\textbf{解}]
+准线所在的平面为$x-2z=0$,由于该平面的一个法向量为$(1,0,-2)$,因此母线的
+方向向量为$(1,0,-2)$.设柱面上的任意一点$(x_0,y_0,z_0)$,则经过该点的母
+线方程为
+$$
+\frac{x-x_0}{1}=\frac{y-y_{0}}{0}=\frac{z-z_0}{-2}.
+$$
+由于任意一条母线都与准线相交,因此存在点$(x_1,y_1,z_1)$,使得
+$$
+\begin{cases}
+  \frac{x_{1}-x_0}{1}=\frac{y_{1}-y_{0}}{0}=\frac{z_{1}-z_0}{-2},\\
+  x_{1}=y_{1}^2+z_{1}^2\\
+x_{1}-2z_{1}=0
+\end{cases},
+$$
+即,
+$$
+20x_{0}+10z_{0}=25y_0^2+4x_0^2+z_0^2+4x_0z_{0}.
+$$
+可见,柱面方程为
+$$
+20x+10z=25y^2+4x^2+z^2+4xz.
+$$
+\end{proof}
+\end{document}

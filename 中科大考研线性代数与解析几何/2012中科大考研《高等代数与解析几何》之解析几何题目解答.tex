@@ -1,0 +1,146 @@
+﻿\documentclass[a4paper]{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb} \usepackage{bm}
+\usepackage{draftwatermark,euler}
+\SetWatermarkText{http://blog.sciencenet.cn/u/Yaleking}%设置水印文字
+\SetWatermarkLightness{0.8}%设置水印亮度
+\SetWatermarkScale{0.35}%设置水印大小
+\usepackage{hyperref} \usepackage{geometry} \usepackage{yhmath}
+\usepackage{pstricks-add} \usepackage{framed,mdframed}
+\usepackage{graphicx,color} \usepackage{mathrsfs,xcolor}
+\usepackage[all]{xy} \usepackage{fancybox} \usepackage{xeCJK}
+\newtheorem*{theo}{定理} 
+\newtheorem*{exe}{题目}
+\newenvironment{theorem}
+{\bigskip\begin{mdframed}\begin{theo}}
+    {\end{theo}\end{mdframed}\bigskip} 
+\newenvironment{exercise}
+{\bigskip\begin{mdframed}\begin{exe}}
+    {\end{exe}\end{mdframed}\bigskip}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\numberwithin{equation}{section}
+\setlength\parindent{0pt}
+\newcommand{\D}{\displaystyle}\newcommand{\ri}{\Rightarrow}
+\newcommand{\ds}{\displaystyle} \renewcommand{\ni}{\noindent}
+\newcommand{\pa}{\partial} \newcommand{\Om}{\Omega}
+\newcommand{\om}{\omega} \newcommand{\sik}{\sum_{i=1}^k}
+\newcommand{\vov}{\Vert\omega\Vert} \newcommand{\Umy}{U_{\mu_i,y^i}}
+\newcommand{\lamns}{\lambda_n^{^{\scriptstyle\sigma}}}
+\newcommand{\chiomn}{\chi_{_{\Omega_n}}}
+\newcommand{\ullim}{\underline{\lim}}
+\newcommand{\mvb}{\mathversion{bold}} \newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda} \newcommand{\va}{\varepsilon}
+\newcommand{\be}{\beta}
+\newcommand{\dis}{\displaystyle} \newcommand{\R}{{\mathbb R}}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+\newcommand{\N}{{\mathbb N}} \newcommand{\cF}{{\mathcal F}}
+\newcommand{\gB}{{\mathfrak B}} \newcommand{\eps}{\epsilon}
+\renewcommand\refname{参考文献}\renewcommand\figurename{图}
+\usepackage[]{caption2} \renewcommand{\captionlabeldelim}{}
+\begin{document}
+\title{{\bf{2012中科大考研《线性代数与解析几何》之解析几何解
+      答\footnote{本解答作为交给解析几何赵老师的第三份作业.}}}} \author{\small{叶卢庆
+    \footnote{叶卢庆(1992-),男,杭州师范大学理学院数学与应用数学专业大
+      四.学号:1002011005.E-mail:yeluqingmathematics@gmail.com}}}
+\maketitle
+\begin{exercise}[1]
+  在$\mathbf{R}^3$中,直线$x=y=z$与平面$z=x-y$的夹角的余弦值等于？
+\end{exercise}
+\begin{proof}[\textbf{解}]
+平面$x-y-z=0$的一个法向量为$n_{1}=(1,-1,-1)$,直线的方向向量为
+$n_{2}=(1,1,1)$,由于
+$$
+\cos \langle n_1,n_2\rangle=\frac{n_1\cdot n_2}{|n_1||n_2|}=\frac{-1}{3},
+$$
+因此,夹角的余项值为$\frac{1}{3}$.
+\end{proof}
+\begin{exercise}[2]
+  在$\mathbf{R}^3$中,方程$xy-yz+zx=1$所表示的二次曲面类型为？
+\end{exercise}
+\begin{proof}[\textbf{解}]
+  我们先考虑化去交叉项$xy$.令
+$$
+\begin{pmatrix}
+  x\\
+  y\\
+  z
+\end{pmatrix}=
+\begin{pmatrix}
+  \cos\alpha&-\sin\alpha&0\\
+  \sin\alpha&\cos\alpha&0\\
+  0&0&1
+\end{pmatrix}
+\begin{pmatrix}
+  x'\\
+  y'\\
+  z'
+\end{pmatrix}
+$$
+代入二次型
+\begin{equation}
+  \label{eq:1}
+  xy-yz+zx
+\end{equation}
+整理后可得
+\begin{equation}
+  \label{eq:2}
+  x'^{2}\cos\alpha\sin\alpha-y'^{2}\sin\alpha\cos\alpha+x'y'\cos
+  2\alpha+y'z'(\cos\alpha-\sin\alpha)+x'z'(\cos\alpha-\sin\alpha).
+\end{equation}
+令$x'y'$前面的系数等于$0$,即让$\cos 2\alpha=0$,此时$\alpha$可以
+为$\frac{\pi}{4}$.在这个时候,$y'z'$和$x'z'$前面的系数也恰好
+为$0$.此时,二次型\eqref{eq:2}可以化为
+$$
+\frac{1}{2}x'^2-\frac{1}{2}y'^2.
+$$
+也即,通过正交替换,方程$xy-yz+zx=1$变成了$x'^2-y'^2=2$.这是一个双曲柱面.
+\end{proof}
+\begin{exercise}[3]
+在$\mathbf{R}^4$中,设三点$A,B,C$的坐标分别为
+$A(1,0,1,0),B(0,1,0,1),C(1,1,1,1)$,则$\triangle ABC$的面积为？  
+\end{exercise}
+\begin{proof}[\textbf{解}]
+$$
+\cos \langle AB,AC\rangle=\frac{AB\cdot AC}{|AB||AC|}=\frac{\sqrt{2}}{2},
+$$
+因此$\sin \langle AB,AC\rangle=\frac{\sqrt{2}}{2}$.因此三角形$ABC$的面
+积是
+$$
+\frac{1}{2}|AB||AC|\sin \langle AB,AC\rangle=1.
+$$
+\end{proof}
+\begin{exercise}[9]
+求$\mathbf{R}^3$中直线$x-1=y-2=z-3$与$x=2y=3z$的公垂线方程.  
+\end{exercise}
+\begin{proof}[\textbf{解}]
+直线$x-1=y-2=z-3$的方向向量为$(1,1,1)$,直线$x=2y=3z$的方向向量为
+$(1,\frac{1}{2},\frac{1}{3})$.而
+$$
+(1,1,1)\times (1,\frac{1}{2},\frac{1}{3})=(\frac{-1}{6},\frac{2}{3},\frac{-1}{2}),
+$$
+因此公垂线的方向向量是$6(\frac{-1}{6},\frac{2}{3},\frac{-1}{2})=(-1,4,-3)$.易得公垂线
+与直线$x-1=y-2=z-3$张成的平面$s_{1}$的法向量为
+$$
+(1,1,1)\times (-1,4,-3)=(-7,2,5),
+$$
+且$s_1$通过点$(1,2,3)$,因此平面$s_1$的方程为
+$$
+-7x+2y+5z-12=0.
+$$
+易得公垂线与直线$x=2y=3z$张成的平面$s_2$的法向量为
+$$
+6(1,\frac{1}{2},\frac{1}{3})\times (-1,4,-3)=6(\frac{-17}{6},\frac{8}{3},\frac{9}{2})=(-17,16,27).
+$$
+且$s_2$通过原点,因此平面$s_2$的方程为
+$$
+-17x+16y+27z=0.
+$$
+因此公垂线方程为
+$$
+\begin{cases}
+  -17x+16y+27z=0,\\
+-7x+2y+5z-12=0.
+\end{cases}
+$$
+\end{proof}
+\end{document}

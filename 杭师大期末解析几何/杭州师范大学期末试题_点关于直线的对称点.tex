@@ -1,0 +1,91 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{bm}
+\usepackage{draftwatermark,euler}
+\SetWatermarkText{http://blog.sciencenet.cn/u/Yaleking}%设置水印文字
+\SetWatermarkLightness{0.8}%设置水印亮度
+\SetWatermarkScale{0.35}%设置水印大小
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{yhmath}
+\usepackage{pstricks-add}
+\usepackage{framed,mdframed}
+\usepackage{graphicx,color} 
+\usepackage{mathrsfs,xcolor} 
+\usepackage[all]{xy}
+\usepackage{fancybox} 
+\usepackage{xeCJK}
+\newtheorem*{theo}{定理}
+\newtheorem*{exe}{题目}
+\newtheorem*{rem}{评论}
+\newmdtheoremenv{lemma}{引理}
+\newmdtheoremenv{corollary}{推论}
+\newmdtheoremenv{example}{例}
+\newenvironment{theorem}
+{\bigskip\begin{mdframed}\begin{theo}}
+    {\end{theo}\end{mdframed}\bigskip}
+\newenvironment{exercise}
+{\bigskip\begin{mdframed}\begin{exe}}
+    {\end{exe}\end{mdframed}\bigskip}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+\newcommand{\D}{\displaystyle}\newcommand{\ri}{\Rightarrow}
+\newcommand{\ds}{\displaystyle} \renewcommand{\ni}{\noindent}
+\newcommand{\ov}{\overrightarrow}
+\newcommand{\pa}{\partial} \newcommand{\Om}{\Omega}
+\newcommand{\om}{\omega} \newcommand{\sik}{\sum_{i=1}^k}
+\newcommand{\vov}{\Vert\omega\Vert} \newcommand{\Umy}{U_{\mu_i,y^i}}
+\newcommand{\lamns}{\lambda_n^{^{\scriptstyle\sigma}}}
+\newcommand{\chiomn}{\chi_{_{\Omega_n}}}
+\newcommand{\ullim}{\underline{\lim}} \newcommand{\bsy}{\boldsymbol}
+\newcommand{\mvb}{\mathversion{bold}} \newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda} \newcommand{\va}{\varepsilon}
+\newcommand{\be}{\beta} \newcommand{\al}{\alpha}
+\newcommand{\dis}{\displaystyle} \newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}} \newcommand{\cF}{{\mathcal F}}
+\newcommand{\gB}{{\mathfrak B}} \newcommand{\eps}{\epsilon}
+\renewcommand\refname{参考文献}\renewcommand\figurename{图}
+\usepackage[]{caption2} 
+\renewcommand{\captionlabeldelim}{}
+\setlength\parindent{0pt}
+\begin{document}
+\title{\huge{\bf{杭州师范大学一道解析几何期末试题}}} \author{\small{叶卢庆\footnote{叶卢庆(1992---),男,杭州师范大学理学院数学与应用数学专业本科在读,E-mail:yeluqingmathematics@gmail.com}}}
+\maketitle
+\begin{exercise}
+  求点$A(a,b,c)$关于直线
+  $\frac{x-x_0}{\cos\alpha}=\frac{y-y_0}{\cos\beta}=\frac{z-z_0}{\cos\gamma}$($\alpha,\beta,\gamma$
+  为直线的方向角)的对称点的坐标.
+\end{exercise}
+\begin{proof}[\textbf{解}]
+首先,我们要在直线上选取一点$P=(x',y',z')$,使得$\ov{AP}\cdot
+(\cos\alpha,\cos\beta,\cos\gamma)=0$.也就是说,
+$$
+\begin{cases}
+  \frac{x'-x_0}{\cos\alpha}=\frac{y'-y_{0}}{\cos\beta}=\frac{z'-z_0}{\cos\gamma}=t,\\
+(x'-a)\cos\alpha+(y'-b)\cos\beta+(z'-c)\cos\gamma=0.
+\end{cases}
+$$
+解得
+$$
+t(\cos^2\alpha+\cos^2\beta+\cos^2\gamma)=(a-x_0)\cos\alpha+(b-y_0)\cos\beta+(c-z_0)\cos\gamma,
+$$
+由于$\cos^2\alpha+\cos^2\beta+\cos^2\gamma=1$,因此
+$$
+t=(a-x_0)\cos\alpha+(b-y_0)\cos\beta+(c-z_0)\cos\gamma.
+$$
+因此得到
+$$
+\begin{cases}
+  x'=t\cos\alpha+x_0=(a-x_0)\cos^{2}\alpha+(b-y_0)\cos\beta\cos\alpha+(c-z_0)\cos\gamma\cos\alpha+x_0,\\
+  y'=t\cos\beta+y_0=(a-x_0)\cos\alpha\cos\beta+(b-y_0)\cos^{2}\beta+(c-z_0)\cos\gamma\cos\beta+y_0,\\
+z'=t\cos\gamma+z_0=(a-x_0)\cos\alpha\cos\gamma+(b-y_0)\cos\beta\cos\gamma+(c-z_0)\cos^2\gamma+z_0.
+\end{cases}
+$$
+对称点坐标设为$(a',b',c')$.易得,
+\begin{align*}
+(a',b',c')-(a,b,c)=2\ov{AP}.
+\end{align*}
+这样就能解出$a',b',c'$,最终得到对称点坐标.
+\end{proof}
+\end{document}
