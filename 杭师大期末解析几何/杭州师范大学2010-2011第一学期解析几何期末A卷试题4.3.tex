@@ -1,0 +1,121 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{yhmath}
+\usepackage{pstricks-add}
+\usepackage{framed,mdframed}
+\usepackage{graphicx,color} 
+\usepackage{mathrsfs,xcolor} 
+\usepackage[all]{xy}
+\usepackage{fancybox} 
+\usepackage{xeCJK}
+\newtheorem*{theo}{定理}
+\newtheorem*{exe}{题目}
+\newtheorem*{rem}{评论}
+\newtheorem*{lemma}{引理}
+\newtheorem*{coro}{推论}
+\newtheorem*{exa}{例}
+\newenvironment{corollary}
+{\bigskip\begin{mdframed}\begin{coro}}
+    {\end{coro}\end{mdframed}\bigskip}
+\newenvironment{theorem}
+{\bigskip\begin{mdframed}\begin{theo}}
+    {\end{theo}\end{mdframed}\bigskip}
+\newenvironment{exercise}
+{\bigskip\begin{mdframed}\begin{exe}}
+    {\end{exe}\end{mdframed}\bigskip}
+\newenvironment{example}
+{\bigskip\begin{mdframed}\begin{exa}}
+    {\end{exa}\end{mdframed}\bigskip}
+\newenvironment{remark}
+{\bigskip\begin{mdframed}\begin{rem}}
+    {\end{rem}\end{mdframed}\bigskip}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+\newcommand{\D}{\displaystyle}\newcommand{\ri}{\Rightarrow}
+\newcommand{\ds}{\displaystyle} \renewcommand{\ni}{\noindent}
+\newcommand{\ov}{\overrightarrow}
+\newcommand{\pa}{\partial} \newcommand{\Om}{\Omega}
+\newcommand{\om}{\omega} \newcommand{\sik}{\sum_{i=1}^k}
+\newcommand{\vov}{\Vert\omega\Vert} \newcommand{\Umy}{U_{\mu_i,y^i}}
+\newcommand{\lamns}{\lambda_n^{^{\scriptstyle\sigma}}}
+\newcommand{\chiomn}{\chi_{_{\Omega_n}}}
+\newcommand{\ullim}{\underline{\lim}} \newcommand{\bsy}{\boldsymbol}
+\newcommand{\mvb}{\mathversion{bold}} \newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda} \newcommand{\va}{\varepsilon}
+\newcommand{\be}{\beta} \newcommand{\al}{\alpha}
+\newcommand{\dis}{\displaystyle} \newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}} \newcommand{\cF}{{\mathcal F}}
+\newcommand{\gB}{{\mathfrak B}} \newcommand{\eps}{\epsilon}
+\renewcommand\refname{参考文献}\renewcommand\figurename{图}
+\usepackage[]{caption2} 
+\renewcommand{\captionlabeldelim}{}
+\setlength\parindent{0pt}
+\begin{document}
+\title{\huge{\bf{题目4.3}}} \author{\small{叶卢庆\footnote{叶卢庆
+      (1992---),男,杭州师范大学理学院数学与应用数学专业本科在
+      读,E-mail:yeluqingmathematics@gmail.com}}}
+\maketitle
+\begin{exercise}
+求直线
+\begin{equation}\label{eq:1}
+\frac{x}{2}=\frac{y}{1}=\frac{z-1}{1}
+\end{equation}
+绕直线
+\begin{equation}\label{eq:2}
+\frac{x}{1}=\frac{y}{-1}=\frac{z-1}{2}
+\end{equation}
+旋转所得的圆锥面方程.
+\end{exercise}
+此题易得有简易解法,但是下面我呈现比较比较繁难的解法.
+\begin{proof}[\textbf{解}]
+设旋转所得的曲面上任意一点为$P=(x,y,z)$,则在直线\eqref{eq:1}上存在点
+$P_{0}=(x_0,y_0,z_0)$位于曲面上,且$P$和$P_0$到直线\eqref{eq:2}的距离相
+等.点$P$到直线\eqref{eq:2}的距离为
+$$
+\frac{\left|\left[(0,0,1)-(x,y,z)\right]\times (t,-t,2t)\right|}{\sqrt{t^2+(-t)^2+(2t)^2}},
+$$
+因此
+\begin{equation}
+  \label{eq:3}
+  \frac{\left|\left[(0,0,1)-(x,y,z)\right]\times (t,-t,2t)\right|}{\sqrt{t^2+(-t)^2+(2t)^2}}=\frac{\left|\left[(0,0,1)-(x_0,y_0,z_0)\right]\times (t,-t,2t)\right|}{\sqrt{t^2+(-t)^2+(2t)^2}}.
+\end{equation}
+化简方程\eqref{eq:3}可得
+\begin{equation}
+  \label{eq:4}
+5x^{2}+5y^{2}+2z^2+2xy+4yz-4zx+4x-4y-4z=5x_{0}^{2}+5y_{0}^{2}+2z_{0}^2+2x_{0}y_{0}+4y_{0}z_{0}-4z_{0}x_{0}+4x_{0}-4y_{0}-4z_0.
+\end{equation}
+另外,我们还有
+\begin{equation}
+  \label{eq:5}
+  \frac{x_0}{2}=\frac{y_0}{1}=\frac{z_0-1}{1},
+\end{equation}
+以及
+\begin{equation}
+  \label{eq:6}
+  (x-x_0,y-y_0,z-z_0)\cdot (1,-1,2)=0.
+\end{equation}
+联立方程\eqref{eq:4},\eqref{eq:5},可得
+\begin{equation}\label{eq:7}
+5x^{2}+5y^{2}+2z^2+2xy+4yz-4zx+4x-4y-4z=27y_0^2-2,
+\end{equation}
+联立方程\eqref{eq:5},\eqref{eq:6},可得
+\begin{equation}
+  \label{eq:8}
+  x-y+2z=3y_0+2.
+\end{equation}
+联立方程\eqref{eq:7},\eqref{eq:8},可得
+\begin{equation}
+  \label{eq:9}
+  5x^{2}+5y^{2}+2z^2+2xy+4yz-4zx+4x-4y-4z=3(x-y+2z-2)^2-2,
+\end{equation}
+即
+$$
+x^2+y^2-5z^2+4xy+8yz-8zx+8x-8y+10z-5=0.
+$$
+这就是欲得锥面方程.
+\end{proof}
+\end{document}
