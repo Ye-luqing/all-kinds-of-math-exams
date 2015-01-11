@@ -55,47 +55,58 @@
 \renewcommand{\captionlabeldelim}{}
 \setlength\parindent{0pt}
 \begin{document}
-\title{\huge{\bf{利用向量法证明三角形面积的海伦公式}}} \author{\small{叶卢庆\footnote{叶卢庆(1992---),男,杭州师范大学理学院数学与应用数学专业本科在读,E-mail:yeluqingmathematics@gmail.com}}}
-\maketitle
 \begin{exercise}
-利用向量法证明关于三角形面积的海伦公式:
-$$
-S^2=p(p-a)(p-b)(p-c).
-$$
-其中$a,b,c$表示三角形的边长,$S$代表三角形的面积,$p=\frac{a+b+c}{2}$.
+求平行于直线
+\begin{equation}\label{eq:1}\frac{x+2}{8}=\frac{y-1}{7}=\frac{z-4}{1}\end{equation}
+且同时与两直线
+\begin{equation}
+  \label{eq:2}
+  l_1:\frac{x+3}{2}=\frac{y-5}{3}=\frac{z}{1}
+\end{equation}
+与
+\begin{equation}
+  \label{eq:3}
+  l_2:\frac{x-10}{5}=\frac{y+7}{4}=\frac{z}{1}.
+\end{equation}
+都相交的直线的方程.
 \end{exercise}
-\begin{proof}[\textbf{证明}]
-如图\eqref{fig:1}所示,
-\begin{align}
-  S^2&=\frac{1}{4}|\ov{AB}\times \ov{AC}|^2
-\\&=\frac{1}{4}(\ov{AB}\times \ov{AC})\cdot
-(\ov{AB}\times
-\ov{AC})\\&=\frac{1}{4}(|\ov{AB}|^2|\ov{AC}|^2-(\ov{AB}\cdot\ov{AC})^2)
-\\&=\frac{1}{4}(|\ov{AB}|^2|\ov{AC}|^2-[\frac{\ov{AB}^2+\ov{AC}^2-(\ov{AB}-\ov{AC})^2}{2}]^{2})
-\\&=\frac{c^2b^2-(\frac{c^2+b^2-a^2}{2})^2}{4}\\&=p(p-a)(p-b)(p-c).
-\end{align}
-  \begin{figure}[h]
-\newrgbcolor{zzttqq}{0.6 0.2 0.}
-\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
-\begin{pspicture*}(-1.3,-5.82)(22.8,6.3)
-\pspolygon[linecolor=zzttqq,fillcolor=zzttqq,fillstyle=solid,opacity=0.1](6.98,4.6)(3.04,-1.62)(13.58,-2.46)
-\psline[linecolor=zzttqq](6.98,4.6)(3.04,-1.62)
-\psline[linecolor=zzttqq](3.04,-1.62)(13.58,-2.46)
-\psline[linecolor=zzttqq](13.58,-2.46)(6.98,4.6)
-\begin{scriptsize}
-\psdots[dotstyle=*,linecolor=blue](6.98,4.6)
-\rput[bl](7.06,4.72){\blue{$A$}}
-\psdots[dotstyle=*,linecolor=blue](3.04,-1.62)
-\rput[bl](3.12,-1.5){\blue{$B$}}
-\psdots[dotstyle=*,linecolor=blue](13.58,-2.46)
-\rput[bl](13.66,-2.34){\blue{$C$}}
-\rput[bl](4.72,1.68){\zzttqq{$c$}}
-\rput[bl](8.28,-2.34){\zzttqq{$a$}}
-\rput[bl](10.5,1.3){\zzttqq{$b$}}
-\end{scriptsize}
-\end{pspicture*}
-    \caption{}
-    \label{fig:1}
-  \end{figure}
+\begin{proof}[\textbf{解}]
+设所求直线的方程为
+$$
+\frac{x-p_1}{8}=\frac{y-p_2}{7}=\frac{z-p_3}{1}.
+$$
+则
+$$
+\begin{vmatrix}
+  p_1+3&p_2-5&p_3\\
+8&7&1\\
+2&3&1
+\end{vmatrix}=0,
+$$
+即
+\begin{equation}
+  \label{eq:4}
+  2p_1-3p_2+5p_3+21=0.
+\end{equation}
+且
+$$
+\begin{vmatrix}
+  p_1-10&p_2+7&p_3\\
+8&7&1\\
+5&4&1\\
+\end{vmatrix}=0,
+$$
+即
+\begin{equation}
+  \label{eq:5}
+  3p_1-3p_2-11p_3-51=0.
+\end{equation}
+方程\eqref{eq:4}和方程\eqref{eq:5}联立,可得所求的直线的方程为
+$$
+\begin{cases}
+  2x-3y+5z+21=0\\
+3x-3y-11z-51=0.
+\end{cases}
+$$
 \end{proof}
 \end{document}
